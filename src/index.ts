@@ -17,8 +17,8 @@ export default function swrize<T, F extends () => Promise<T>>(
   fn: F,
   options?: Options
 ): F {
-  const staleWhileRevalidate = options?.staleWhileRevalidate || 0;
-  const maxAge = options?.maxAge || 0;
+  const staleWhileRevalidate = (options?.staleWhileRevalidate || 0) * 1000;
+  const maxAge = (options?.maxAge || 0) * 1000;
 
   const results: Cache<T> = {};
   const requests: Cache<T> = {};
