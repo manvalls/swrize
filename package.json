@@ -1,0 +1,28 @@
+{
+  "name": "swrize",
+  "version": "0.0.1",
+  "description": "SWR for functions",
+  "main": "lib/index.js",
+  "sideEffects": false,
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "prepare": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manvalls/swrize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manvalls/swrize/issues"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "homepage": "https://github.com/manvalls/swrize#readme"
+}
