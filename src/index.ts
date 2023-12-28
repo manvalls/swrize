@@ -4,24 +4,24 @@ export type Options = {
   onError?: (error: any) => void;
 };
 
-type CacheItem<T> = {
-  promise: Promise<T>;
+type CacheItem = {
+  promise: Promise<any>;
   ts: number;
 };
 
-type Cache<T> = {
-  [key: string]: CacheItem<T>;
+type Cache = {
+  [key: string]: CacheItem;
 };
 
-export default function swrize<T, F extends () => Promise<T>>(
+export default function swrize<F extends (...args: any[]) => Promise<any>>(
   fn: F,
   options?: Options
 ): F {
   const staleWhileRevalidate = (options?.staleWhileRevalidate || 0) * 1000;
   const maxAge = (options?.maxAge || 0) * 1000;
 
-  const results: Cache<T> = {};
-  const requests: Cache<T> = {};
+  const results: Cache = {};
+  const requests: Cache = {};
 
   return function swrized(...args) {
     const key = JSON.stringify(args);
