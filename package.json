@@ -1,6 +1,6 @@
 {
   "name": "swrize",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "SWR for functions",
   "main": "lib/index.js",
   "sideEffects": false,
