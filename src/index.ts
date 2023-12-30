@@ -1,4 +1,4 @@
-export type Options = {
+type Options = {
   staleWhileRevalidate?: number;
   maxAge?: number;
   onError?: (error: any) => void;
@@ -13,7 +13,7 @@ type Cache = {
   [key: string]: CacheItem;
 };
 
-export default function swrize<F extends (...args: any[]) => Promise<any>>(
+export = function swrize<F extends (...args: any[]) => Promise<any>>(
   fn: F,
   options?: Options
 ): F {
@@ -61,4 +61,4 @@ export default function swrize<F extends (...args: any[]) => Promise<any>>(
 
     return Promise.resolve(result?.promise || request?.promise);
   } as F;
-}
+};
